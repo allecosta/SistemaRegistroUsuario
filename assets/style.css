@@ -1,0 +1,32 @@
+.button {
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	box-shadow: 0 0 10px $666;
+	background-color: #f2f2f2;
+	border-radius: 10px;
+}
+
+.form {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+input {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	box-shadow: 0 0 10px #666;
+	width: 240px;
+	height: 30px;
+	background-color: #f2f2f2;
+	border-radius: 10px;
+
+}
