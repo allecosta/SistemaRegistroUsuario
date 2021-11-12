@@ -11,7 +11,7 @@
 ---
 
 ## Banco de dados
-Crie um banco de dados e execute as instruções SQLs abaixo para criar a tabela `usuários`:
+Crie um banco de dados e execute as instruções SQLs abaixo para criar a tabela `usuarios`:
 
 ```
   CREATE TABLE usuarios (
@@ -35,7 +35,7 @@ O projeto é composto por 4 seções:
 
 ---
 
-## Tecnologias e ferrametas utilizadas
+## Tecnologias e ferramentas utilizadas
 Para o desenvolvimento deste projeto utilizei:
 
 - PHP 8.0.12;
