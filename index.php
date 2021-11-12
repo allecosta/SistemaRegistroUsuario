@@ -15,9 +15,9 @@ session_start();
 
 <body>
 	<div class="button">
-	<a href="Search.php">Pesquisar</a><br>
+	<a href="search.php">Pesquisar</a><br>
 	</div>
-	<div class="formulario">
+	<div class="form">
 		<h1>CADASTRAR USUÁRIO</h1>
 
 		<?php 
@@ -27,12 +27,13 @@ session_start();
 				echo $_SESSION['msg'];
 
 				unset($_SESSION['msg']);
+				
 			}
 		?>
 
-		<form method="POST" action="ProcessoCadastroUsuario.php">
+		<form method="POST" action="processRegisterUser.php">
 			<input type="text" name="nome" placeholder="Informe o nome completo" required="nome"><br><br>
-			<input type="email" name="email" placeholder="Informe o seu e-mail" required=""><br><br>
+			<input type="email" name="email" placeholder="Informe o seu e-mail" required="email"><br><br>
 			<input type="submit" name="Cadastrar" value="Cadastrar">
 		</form>
 	</div>

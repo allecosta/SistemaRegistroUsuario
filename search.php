@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-include_once("Connection.php");
+include_once("connection.php");
 
 ?>
 
@@ -16,24 +16,24 @@ include_once("Connection.php");
 
 <body>
 	<div class="button">
-		<a href="Index.php">Cadastrar</a>
+		<a href="index.php">Cadastrar</a>
 	</div>
-	<div class="formulario">
+	<div class="form">
 		<h1>PESQUISAR USUÁRIO</h1>
 
-		<form method="POST" action="List.php">
+		<form method="POST" action="list.php">
 			<input type="text" name="nome" placeholder="Informe o nome" required="nome"><br><br>
-			<input type="submit" name="sendPesqUser" value="Pesquisar">
+			<input type="submit" name="sendSearchUser" value="Pesquisar">
 		</form><br><br>
 
 		<?php 
 
-		$sendPesqUser = filter_input(INPUT_POST, "nome", FILTER_SANITIZER_STRING);
+		$sendSearchUser = filter_input(INPUT_POST, 'nome', FILTER_SANITIZER_STRING);
 
-		if ($sendPesqUser) {
+		if ($sendSearchUser) {
 
-			$name = filter_input(INPUT_POST, "nome", 	FILTER_SANITIZER_STRING);
-			$sql = "SELECT * FROM usuarios WHERE nome LIKE '%$name$'";
+			$name = filter_input(INPUT_POST, 'nome', FILTER_SANITIZER_STRING);
+			$sql = "SELECT * FROM usuarios WHERE nome LIKE '%$name%'";
 			$resultUser = mysqli_query($conn, $sql);
 
 			while ($rowUser = mysqli_fetch_assoc($resultUser)) {
@@ -41,14 +41,14 @@ include_once("Connection.php");
 				echo "ID: " . $rowUser['id'] . "<br>";
 				echo "Nome: " . $rowUser['nome'] . "<br>";
 				echo "E-mail: " . $rowUser['email'] . "<br>";
-				echo "Created: " . $rowUser['created'] . "<br>";
-				echo "<a href='EditionUser.php?id" . $rowUser['id'] . "'>Editar</a><br>";
-				echo "<a href='ProcessDeleteUser.php?id=" . $rowUser['id'] . "'>Apagar</a><br><hr>";
+				echo "Created: " . $rowUser['created'] . "<br><br>";
+				echo "<a href='editionUser.php?id" . $rowUser['id'] . "'>Editar</a><br>";
+				echo "<a href='processDeleteUser.php?id=" . $rowUser['id'] . "'>Apagar</a><br><hr>";
 			}
 		} 
 
 		?>
-		
+	
 	</div>
 </body>
 

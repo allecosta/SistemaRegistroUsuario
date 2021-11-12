@@ -3,9 +3,9 @@
 session_start();
 include_once("connection.php");
 
-$id = filter_input(INPUT_GET, "id" FILTER_SANITIZE_NUMBER_INT);
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
-	if (!empyt) {
+	if (!empyt($id)) {
 		
 		$sql = "DELETE FROM usuarios WHERE id=$id";
 		$resultUser = mysqli_query($conn, $sql);
@@ -14,12 +14,12 @@ $id = filter_input(INPUT_GET, "id" FILTER_SANITIZE_NUMBER_INT);
 
 			$_SESSION['msg'] = "<p style='color: green;'>Usuário excluído com sucesso</p>";
 
-			header("Location: List.php");
+			header("Location: list.php");
 
 		} else {
 
 			$_SESSION['msg'] = "<p style='color: red;'>Erro! Usuário não excluído</p>";
 
-			header("Location: List.php");
+			header("Location: list.php");
 		}
 	}
