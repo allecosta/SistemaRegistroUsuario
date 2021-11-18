@@ -5,12 +5,8 @@
 <h4 align="center">
   Sistema básico de cadastro de usuários com o intuito de desenvolver a lógica de programação.
 </h4>
+<br>
 
-![Resultado de momento do projeto](assets/system-user.png)
-
----
-
-## Banco de dados
 Crie um banco de dados e execute as instruções SQLs abaixo para criar a tabela `usuarios`:
 
 ```
